@@ -25,9 +25,6 @@ def last2(string):
 # integers representing the lengths of the correponding words.
 def length_words(array):
     return None
-    # Autre solution dessous avec un map
-    # return list(map(lambda x:len(x),array))
-
 
 # write fizbuzz programm
 def fizbuzz():
