@@ -5,26 +5,37 @@ import unittest
 # that is n copies of the original string.
 
 def string_times(string, n):
-    return None
+    return n*string
 
 
 # Given an array of ints, return True if one of the first 4 elements
 # in the array is a 9. The array length may be less than 4.
 def array_front9(nums):
-    return None
+    return 9 in nums[:4]
+
 
 
 # Given a string, return the count of the number of times
 # that a substring length 2 appears  in the string and also as
 # the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
 def last2(string):
-    return None
-
+    counter = 0
+    twochar = string[-2]+string[-1] 
+    substring = string[:-2]
+    for i in range(len(substring)):
+        if substring[i] == twochar[0] and substring[i+1] == twochar[1]:
+            counter += 1
+    return counter
 
 # Write a program that maps a list of words into a list of
 # integers representing the lengths of the correponding words.
 def length_words(array):
-    return None
+    lst = []
+
+    for element in array:
+        lst.append(len(element))
+
+    return lst
 
 # write fizbuzz programm
 def fizbuzz():
@@ -33,13 +44,24 @@ def fizbuzz():
 
 # Write a function that takes a number and returns a list of its digits.
 def number2digits(number):
-    return None
+    lst = []
+    for i in range(len(str(number))):
+        lst.append(int(str(number)[i]))
+    return lst
 
 # Write function that translates a text to Pig Latin and back.
 # English is translated to Pig Latin by taking the first letter of every word,
 # moving it to the end of the word and adding 'ay'
 def pigLatin(text):
-    return None
+    text = text.lower()
+    words = text.split()
+    lst = []
+    for word in words:
+        new_word = word[1:]+word[0]+'ay'
+        if lst == []:
+           new_word = new_word.capitalize()
+        lst.append(new_word)
+    return ' '.join(lst)
 
 # Here's our "unit tests".
 class Lesson1Tests(unittest.TestCase):
